@@ -1,7 +1,8 @@
 # Timescale Assignment
 
 # build cli
-`make build `
+`make build ` // create executable name benchmark or
+`go build -o benchmark ./tools/benchmark/main.go`
 
 ## environment variables
 - POSTGRES_DB
