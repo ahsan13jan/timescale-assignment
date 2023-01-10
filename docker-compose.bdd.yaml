@@ -11,6 +11,7 @@ services:
       - ./init-script-bdd/:/docker-entrypoint-initdb.d/
   test:
     build:
+      context: .
       dockerfile: Dockerfile.bdd
     environment:
       POSTGRES_HOST: timescale
