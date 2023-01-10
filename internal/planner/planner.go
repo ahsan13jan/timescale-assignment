@@ -60,6 +60,7 @@ func (p Planner) createOrAssignWorker(host string) *worker {
 		p.workers[w] = []string{host}
 		return w
 	} else {
+		// number of concurrent workers maxed out, randomly assign host to worker
 		randomIndex := randomNum(p.maxWorkers-1, 0)
 		index := 0
 		for w, h := range p.workers {

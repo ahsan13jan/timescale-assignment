@@ -19,9 +19,10 @@ func StreamInput(filePath string, out chan<- Query) {
 		file    *os.File
 		err     error
 	)
+
 	if filePath != "" {
-		file, err = os.Open(filePath)
-		if err != nil {
+		if file, err = os.Open(filePath); err != nil {
+			// TODO handle error gracefully
 			log.WithError(err).Fatalf("could not open file with path:%s", filePath)
 			return
 		}

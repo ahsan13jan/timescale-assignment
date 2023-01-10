@@ -55,6 +55,7 @@ func Execute(fileName string, maxWorkers int, c config.Config) stats.StatsOutput
 		return nil
 	})
 
+	// TODO handle signals
 	if err := errG.Wait(); err != nil {
 		log.WithError(err).Error("errgroup error")
 	}
