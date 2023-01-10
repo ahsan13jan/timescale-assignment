@@ -1,0 +1,6 @@
+FROM golang:1.19-alpine as base
+ENV CGO_ENABLED 0
+ENV GOOS linux
+WORKDIR /code
+COPY . /code
+ENTRYPOINT go test -v ./... -tags=integration -count=1
