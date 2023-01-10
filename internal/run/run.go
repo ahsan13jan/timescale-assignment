@@ -24,6 +24,7 @@ func Execute(fileName string, maxWorkers int, c config.Config) stats.StatsOutput
 	}
 
 	ctx := context.Background()
+	// TODO handle context cancellation and interupt signals
 
 	client, err := db.New(c)
 	if err != nil {
